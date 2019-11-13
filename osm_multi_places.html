@@ -9,82 +9,28 @@
                 integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
                 crossorigin="" />
 
+        <link rel="stylesheet" href="style.css">
         <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.min.js"
                 integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh"
                 crossorigin=""></script>
         <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
                 integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
                 crossorigin=""></script>
+        <script src="proj4.js"></script>
+
+        <script src="https://kit.fontawesome.com/9f3c60a9ae.js" crossorigin="anonymous"></script>
+
+        <title>Open Street Map</title>
 
 
-        <title>Documents</title>
 </head>
 
 <body>
-        <style>
-                #osm-map {
-                        height: 610px;
-                        width: 100%;
-                        border: 1px solid #AAA;
-                }
-        </style>
 
         <div id="osm-map"></div>
 
 </body>
-<script>
-        const myMap = L.map('osm-map', { center: [52.0, 20.0], minZoom: 2, zoom: 6 });
 
-        const attribution =
-                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
-
-        const tileUrl =
-                'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-
-        const tiles = L.tileLayer(tileUrl, { attribution });
-        tiles.addTo(myMap);
-
-
-        var myIcon = L.icon({
-                iconUrl: 'images/pin24.png',
-                iconRetinaUrl: 'images/pin48.png',
-                iconSize: [29, 24],
-                popupAnchor: [0, -14]
-        });
-
-        proj4.defs("EPSG: 2180", "+proj=tmerc + lat_0=0 + lon_0=19 + k=0.9993 + x_0=500000 + y_0=-5300000 + ellps=GRS80 + towgs84=0, 0, 0, 0, 0, 0, 0 + units=m + no_defs");
-
-
-        var markers = [
-                {
-                        "city": "Warsaw",
-                        "lat": 52.2297,
-                        "lng": 21.0122
-                },
-                {
-                        "city": "Krakow",
-                        "lat": 50.0647,
-                        "lng": 19.9450
-                },
-                {
-                        "city": "Wrocław",
-                        "lat": 51.1079,
-                        "lng": 17.0385
-                },
-                {
-                        "city": "Tychy",
-                        "lat": 50.1194713,
-                        "lng": 18.9911988
-                }
-        ];
-
-        for (var i = 0; i < markers.length; i++) {
-                L.marker([markers[i].lat, markers[i].lng], { icon: myIcon })
-                        .bindPopup(markers[i].city).addTo(myMap);
-        };
-
-
-
-</script>
+<script src="script.js"></script>
 
 </html>
