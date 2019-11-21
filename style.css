@@ -1,9 +1,16 @@
 #osm-map {
-  height: 610px;
+  height: 400px;
   width: 100%;
   border: 1px solid #aaa;
 }
-
+.leaflet-pane > svg path.leaflet-interactive {
+  stroke: rgb(51, 136, 255);
+  stroke-opacity: 1;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
 .custom-div-icon i {
   position: absolute;
   width: 22px;
@@ -16,21 +23,24 @@
 
 .leaflet-popup-content {
   color: #000000;
-  /* font-weight: bold; */
 }
 
-.fa-exclamation {
+.custom-div-icon .i1 {
   color: #ffc312;
+  font-size: x-large;
 }
 
-.fa-map-marker {
-  color: green;
+.custom-div-icon .i2 {
+  color: #009431c5;
+  font-size: medium;
 }
 
-.fa-map-marker-alt {
+.custom-div-icon .i3 {
+  font-size: x-large;
+  color: red;
+}
+
+.custom-div-icon .i4 {
   color: #f53b57;
-}
-
-.fa-skull-crossbones {
-  color:red;
+  font-size: larger;
 }
